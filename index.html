@@ -1,0 +1,70 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="visuals.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="list.js"></script>
+  <script src="import.js"></script>
+
+  
+
+</head>
+<body>
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>Admin dashboard</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 col-md-offset-5">
+    <form id="jsonFile" name="jsonFile" enctype="multipart/form-data" method="post">
+
+      <h3>Import the JSON</h3>
+       <input type='file' id='fileinput'>
+       <br />
+       <input type='button' id='btnLoad' value='Load' onclick='loadFile();'>
+
+    </form>
+  </div>
+</div>
+
+
+<div id="locations" style="visibility:hidden">
+  <div class="row">
+  <div class="col-md-6 col-md-offset-5">
+    <input id="filter" class="search" placeholder="Filter" />
+    <button class="sort" data-sort="Name" id="filterButton" value="Filter" onclick='filterBy()'>Filter</button>
+   <div class="container"> 
+  </div>
+  </div>
+   <table id="table" class="table">
+      <thead>
+        <tr>
+           <th>Thumbnail</th>
+           <th>Name</th>
+           <th><button class="sort" data-sort="Name" id="Stars" value="ascending" onclick="sortBy('Stars')">Stars</button></th>
+           <th>Location</th>
+           <th><button class="sort" data-sort="Name" id="Distance" value="ascending" onclick="sortBy('Distance')">Distance</button></th>
+           <th>EstablishmentId</th>
+           <th>EstablishmentType</th>
+           <th><button class="sort" data-sort="Name" id="MinCost" value="ascending" onclick="sortBy('MinCost')">MinCost</button></th>
+           <th><button class="sort" data-sort="Name" id="UserRating" value="ascending" onclick="sortBy('UserRating')">UserRating</button></th>
+           <th>UserRatingTitle</th>
+           <th>UserRatingCount</th>
+        </tr>
+      </thead>
+      <tbody class="" id="tableBody">
+      
+      </tbody>
+    </table>
+  </div>
+</div> 
+</body>
+</html>
